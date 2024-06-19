@@ -1,0 +1,556 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: Inter, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; 
+  }
+  @supports (font-variation-settings: normal) {
+    :root { font-family: InterVariable, sans-serif; }
+  }
+
+.additional-padding-bottom {
+    padding-bottom: 10px;
+}
+
+.qualidade-box {
+    flex-direction: column !important;
+    gap: 0px !important;
+}
+
+html {
+    font-family: "Inter", sans-serif !important;
+}
+
+.my-4 {
+    padding-top: 2rem !important;
+    margin: 0 !important;
+}
+
+.pb-3 {
+    padding-bottom: 1rem !important;
+    padding-top: 20px;
+}
+
+.card-footer {
+    padding: 0;
+    color: none;
+    background-color: none;
+    border-top: none;
+}
+
+.image-banner-ai {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: black;
+} .h3-home {
+    letter-spacing: -2px;
+    font-weight: 700;
+}
+
+.p-first {
+    max-width: 500px;
+}
+
+header {
+    justify-content: center;
+    display: flex;
+    border-bottom: 1px solid #D6D7DB;
+}
+
+.logo {
+    max-width: 100px;
+    display: flex;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.bi-whatsapp::before {
+    content: "\f618";
+    padding-right: 10px;
+}
+
+.beneficio-quick {
+    align-items: center;
+    flex-direction: row !important;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.beneficios-quick {
+    background-color: #34B7F1;
+    padding: 20px 0px !important;
+    color: #fff;
+}
+
+.h1-sec-autoescola-bottom {
+    margin-bottom: 40px;
+}
+
+.button-header {
+    display: flex;
+    gap: 10px;
+}
+
+.h1-home {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -2.6px;
+    margin: 0;
+}
+
+.h1-autoescola-page {
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    letter-spacing: -2.6px;
+    max-width: 500px;
+    line-height: 1;
+}
+
+label {
+    display: inline-block;
+}
+
+p {
+    font-size: 22px;
+}
+
+hr {
+    margin: 30px 0px 15px 0px;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: .25;
+}
+
+.bio-div {
+    margin: 10px 0px;
+}
+
+figcaption {
+    text-align: center;
+    padding: 10px 0 15px 0;
+}
+
+.bio-div p {
+    font-size: 20px;
+    padding-bottom: 25px;
+    text-align: justify;
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #E11138;
+    border-radius: .35rem;
+    color: white;
+}
+
+.text-body-secondary {
+    --bs-text-opacity: 1;
+    color: black !important;
+}
+
+.nav-link {
+    color: black !important;
+}
+
+.btn-main {
+    background-color: #E11138;
+    color: white;
+    max-width: 250px;
+}
+
+.big{
+    height: 50px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    max-width: 300px;
+    padding: 0 30px;
+}
+
+.btn-second {
+    border: solid 1px #E11138;
+    color: #E11138;
+}
+
+.container .h1-home {
+    max-width: 500px;
+}
+
+.video-instrucao {
+    align-items: center;
+}
+
+.container input {
+    margin-bottom: 15px;
+}
+
+.list-moderador-funcionalidades {
+    display: flex;
+    margin: 0;
+    list-style: none;
+    gap: 20px;
+}
+
+.align-form-center {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.senha-alert {
+    font-size: 16px;;
+}
+
+.btn-logout {
+    border: solid 1px black;
+    color: black;
+}
+
+.margin-moderador {
+    margin: 40px auto;
+}
+
+.input-group-text {
+    border-radius: 10px 0px 0px 10px;
+}
+
+.container-sm .h1-home  {
+    padding: 40px 0;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+.p-see-alunos {
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.btn-whatsapp {
+    color: #fff;
+    background-color: #25d366;
+}
+
+.bi-whatsapp::before {
+    content: "\f618";
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.bg-body-tertiary {
+    background-color: white !important;
+}
+
+.nav-link {
+    color: black;
+}
+
+.navbar-toggler {
+    padding: .10rem .75rem;
+    font-size: 1.1rem;
+    line-height: 1;
+    background-color: #E11138;
+    border-radius: 10px;
+    color: white;
+}
+
+.first-section-inicial {
+    padding: 50px 0px !important;
+}
+
+.container {
+    border-radius: 10px;
+    padding: 0;
+}
+
+.first-sec-inicial-index {
+    padding: 50px 0;
+}
+
+.center-button-site {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    max-width: 1250px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 30px;
+    background-color: #f5f5f5;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 15px;
+}
+  
+.height-index-inicial-sections {
+    height: 400px;
+}
+
+.central {
+    margin: 0 10px;
+}
+
+.beneficios {
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.beneficio {
+    margin-bottom: 10px;
+}
+
+.gray {
+    background-color: #F3F8F2;
+    border-radius: 10px;
+}
+
+.list-group-item {
+    background-color: #F3F8F2;
+}
+
+.image-header {
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.list-group-item {
+    padding-left: 0;
+}
+
+h3 {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+.bio {
+    max-width: 800px;
+    padding-top: 50px;
+    display: flex;
+}
+
+.row .bio {
+    gap: 20px;
+}
+
+.py-3 {
+    padding-top: 0rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.login-h3 {
+    padding-bottom: 20px;
+}
+
+.button-login {
+    width: 175px;
+    margin-top: 7px;
+    height: 35px;
+    margin-bottom: 60px;
+}
+
+.video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav {
+        padding: 0 30px;
+    }
+}
+@media (max-width: 900px) {
+    header {
+        border-bottom: 1px solid #D6D7DB;
+        padding: 0 20px;
+        justify-content: none;
+        display: block;
+        border-bottom: 1px solid #D6D7DB;
+    } .image-header {
+        max-width: 100%;
+        margin-top: 20px;
+        border-radius: 10px;
+    } .col {
+        height: auto;
+    } .row {
+        display: flex;
+        flex-direction: column;
+    } .h1-home {
+        font-size: 35px;
+    } .gray {
+        border-radius: 0;
+        background-color: white;
+    } .h3-home {
+        padding: 8px 0px 0px 0px;
+    } .list-group-item {
+        background-color: white;
+    } .bio-div p {
+        font-size: 16px;
+    } .bio {
+        padding-top: 25px !important;
+    } .btn-main {
+        max-width:  100%;
+    } .login-h3 {
+        padding-bottom: 0px !important;
+      } .container {
+        padding: 0 20px;
+      } .container input {
+        max-width: 200px;
+      } .margin-moderador {
+        margin: 20px auto;
+    } .tablewrapper{
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto; 
+    } .left-mobile-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        padding-bottom: 20px;
+    } .align-form-center {
+        gap: 0px;
+    } .form-add-product {
+        margin: 0 auto 0 auto !important;
+        padding: 0px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        max-width: auto !important;
+    } .image-banner-ai {
+        max-width: 100%;
+        border-radius: 0px;
+        margin-bottom: 0px;
+    } hr {
+        margin: 30px 0 0 0;
+    } .text-muted {
+        margin-top: 0;
+    } dl, ol, ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    } .fieldWrapper .qualidade-box li {
+        padding-bottom: 10px;
+    }
+    .inline-cadastro {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+        margin: 0px 0px 20px 0px !important;
+        padding: 20px 30px 0 30px;
+    } .fieldWrapper {
+        padding: 0 20px !important;
+    }
+}
+
+input[type="text"], input[type="number"], input[type="password"] {
+    border-radius: 10px;
+    border: 1px solid #D6D7DB;
+}
+
+@media (min-width: 768px) {
+    .row-cols-md-3>* {
+        flex: 0 0 auto;
+        width: 33.333%;
+        /* padding: 0; */
+    } .margin-benefits {
+        margin: 0 -20px;
+    }
+}
+
+.accordion-button:not(.collapsed) {
+    color: #128c7e;
+    background-color: #dcf8c6;
+}
+
+.faq {
+    margin-top: 60px;
+    padding: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.accordion-body {
+    padding: var(--bs-accordion-body-padding-y) var(--bs-accordion-body-padding-x);
+    text-align: left;
+}
+
+@media (min-width: 576px) {
+    .col-sm-3 {
+        flex: 0 0 auto;
+        width: auto;
+    }
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-collapse: collapse;
+    padding: 0;
+} 
+
+ol, ul {
+    padding-left: 1.5rem;
+}
+
+.form-add-product {
+    margin: 40px auto 0 auto;
+    padding: 40px 70px;
+    border: 1px solid #dee2e6!important;
+    border-radius: 10px;
+    max-width: 700px;
+}
+
+.text-muted {
+    color: #6c757d; 
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+}
+
+.inline-cadastro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0px 20px 0px;
+}
+
+.fieldWrapper {
+    margin-bottom: 10px;
+    gap: 10px;
+    display: flex;
+}
+
+.fieldWrapper input, input[type="file" i], select {
+    height: 30px;
+}
