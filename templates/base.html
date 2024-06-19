@@ -21,7 +21,7 @@
               <nav class="navbar navbar-expand-lg bg-body-tertiary center">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="{% url 'inicial:index' %}">
-                    <img class="logo" src="{% static 'images/logosus.png' %}" />
+                    <img class="logo" src="{% static 'images/logo.webp' %}" />
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -87,7 +87,7 @@
                     </ul>
                     <div class="button-header">
                         {% if not user.is_authenticated %}
-                          <a href="{% url 'inicial:index' %}"><button type="button" class="btn btn-sm btn-second">Acessar plataforma</button></a>
+                          <a href="{% url 'inicial:index' %}"><button type="button" class="btn btn-sm btn-second">Realizar predições</button></a>
                         {% else %}
                           <a href="{% url 'inicial:index' %}"><button type="button" class="btn btn-sm btn-second">Sair</button></a>
                         {% endif %}
@@ -118,9 +118,8 @@
           <div class="container footer-background">
             <footer class="py-3 my-4">
               <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Acelere.org</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">CNPJ: 42.674.865/0001-83</a></li>
-                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">WhatApp</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">sus.log.br</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">contato@sus.log.br</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Políticas</a></li>
               </ul>
               <img class="logo" src="{% static 'images/logo.webp' %}" />

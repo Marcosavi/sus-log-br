@@ -12,7 +12,7 @@
   }
 
 .additional-padding-bottom {
-    padding-bottom: 10px;
+    padding: 15px 0px 20px 10px;
 }
 
 .qualidade-box {
@@ -172,7 +172,7 @@ figcaption {
 }
 
 .btn-main {
-    background-color: #E11138;
+    background-color: #2864AE;
     color: white;
     max-width: 250px;
 }
@@ -192,7 +192,7 @@ figcaption {
 }
 
 .container .h1-home {
-    max-width: 500px;
+    max-width: 600px;
 }
 
 .video-instrucao {
@@ -326,12 +326,12 @@ label {
 }
 
 .gray {
-    background-color: #F3F8F2;
+    background-color: #2864ae24;
     border-radius: 10px;
 }
 
 .list-group-item {
-    background-color: #F3F8F2;
+    background-color: #2864ae24;
 }
 
 .image-header {
