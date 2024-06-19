@@ -187,8 +187,8 @@ figcaption {
 }
 
 .btn-second {
-    border: solid 1px #E11138;
-    color: #E11138;
+    border: solid 1px #2864AE;
+    color: #2864AE;
 }
 
 .container .h1-home {
@@ -247,8 +247,9 @@ label {
 }
 
 .btn-whatsapp {
-    color: #fff;
-    background-color: #25d366;
+    color: #2864AE;
+    background-color: #2864ae00;
+    border: solid 1px #2864AE
 }
 
 .bi-whatsapp::before {
