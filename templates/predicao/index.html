@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Adicionar Autoescola | Acelere
+{% endblock %}
+
+{% block content %}
+    {% if user %}
+        <div class="row">
+            <form method="POST" enctype="multipart/form-data" class="form-add-product">
+                {% csrf_token %}
+                <img class="image-banner-ai" src="{% static 'images/banner_ia.png' %}" alt="Banner IA">
+
+                <!-- Seçao 1 - Cadastro Rápido -->
+                <div class="inline-cadastro">
+                    <h1 class="h3-home">Predicao rápida</h1>
+                    <smal>⏱️ 10 segundos</smal>
+                </div>
+
+                <div class="fieldWrapper">
+                    <ul><li>Ano e mês (Ex: 06/2024)</li></ul>
+                    {{ form.ano_mes }}
+                </div>
+
+                <div class="fieldWrapper">
+                    <button class="btn btn-sm btn-main big" type="submit">realizar prediçao</button>
+                </div>
+                
+            </form>
+        </div>
+    {% else %}
+        <p>Access denied</p>
+    {% endif %}
+{% endblock %}

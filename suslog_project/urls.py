@@ -22,6 +22,7 @@ from django.conf import settings # type: ignore
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("inicial.urls")),
+    path("predicao/", include("predicao.urls")),
 ]
 
 if settings.DEBUG:
