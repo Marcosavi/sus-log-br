@@ -106,7 +106,7 @@ header {
 }
 
 .h1-home {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 800;
     font-family: "Inter", sans-serif;
     letter-spacing: -2.6px;
@@ -192,7 +192,7 @@ figcaption {
 }
 
 .container .h1-home {
-    max-width: 600px;
+    max-width: 500px;
 }
 
 .video-instrucao {
