@@ -2,4 +2,4 @@
 from django import forms
 
 class ForquilhinhaVacinaForm(forms.Form):
-    Ano = forms.IntegerField(label='Enter the year you want to compare (2004-2022)')
+    Ano = forms.IntegerField(label='Adicione o ano que você deseja comparar (entre 2004 e 2022):')

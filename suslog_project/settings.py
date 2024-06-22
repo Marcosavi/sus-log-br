@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "inicial",
     "predicao",
+    "comparar_modelos",
 ]
 
 MIDDLEWARE = [

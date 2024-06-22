@@ -3,30 +3,40 @@
 {% load static %}
 
 {% block title %}
-Compare Year
+Prediçao Forquilhinha
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Compare Vaccination Data for a Year</h1>
-    
-    <!-- Form for selecting the year -->
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+          <h1 class="h1-home">Compare vacinaçao anual em Forquilhinha/SC</h1>
+          <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-sm btn-main big">Realizar predicao</button>
+            </form>
+          </div>
+        </div>
+        <div class="col">
+            <img class="image-header" src="{% static 'images/medicamentos.webp' %}">
+          </div>
+      </div>
 
     <!-- Display the table of results if data is available -->
     {% if has_data %}
-        <h2 class="mt-4">Results for {{ form.cleaned_data.Ano }}</h2>
+        <hr> 
+        <h3 class="mt-4">Resultados para {{ form.cleaned_data.Ano }}</h3>
         <table class="table table-striped mt-4">
             <thead>
                 <tr>
-                    <th>Index</th>
-                    <th>Date</th>
-                    <th>Applied vaccines</th>
-                    <th>Predicted vaccines</th>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Vacinas aplicadas</th>
+                    <th>Vacinas preditas</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,7 +54,8 @@ Compare Year
         <!-- Display the graph if it exists -->
         {% if graph_path %}
             <div class="mt-4">
-                <h3>Graphical Comparison</h3>
+                <hr>
+                <h3>Comparação entre real e predito</h3>
                 <img src="{% static graph_path %}" alt="Graph showing real vs predicted values" class="img-fluid">
             </div>
         {% endif %}

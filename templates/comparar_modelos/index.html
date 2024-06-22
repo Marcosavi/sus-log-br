@@ -1,0 +1,88 @@
+<!-- templates/compare_models_df1.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Compare Models
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Compare Predictions from Different Models</h1>
+    
+    <!-- Form for selecting the year -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- Display the table of results if data is available -->
+    {% if has_data %}
+        <h2 class="mt-4">Results for {{ form.cleaned_data.Ano }}</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Date</th>
+                    <th>Applied vaccines</th>
+                    <th>Random Forest</th>
+                    <th>Linear Regression</th>
+                    <th>SVM</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data_year.itertuples %}
+                <tr>
+                    <td>{{ row.Index }}</td>
+                    <td>{{ row.data }}</td>
+                    <td>{{ row.vacinas_aplicadas }}</td>
+                    <td>{{ row.Vacinas_RF }}</td>
+                    <td>{{ row.Vacinas_LR }}</td>
+                    <td>{{ row.Vacinas_SVM }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Display the graph if it exists -->
+        {% if graph_path %}
+            <div class="mt-4">
+                <h3>Graphical Comparison</h3>
+                <img src="{% static graph_path %}" alt="Graph comparing model predictions" class="img-fluid">
+            </div>
+        {% endif %}
+
+        <!-- Display the metrics -->
+        <div class="mt-4">
+            <h3>Model Metrics</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>MAE</th>
+                        <th>MSE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Random Forest</td>
+                        <td>{{ metrics.RF_MAE }}</td>
+                        <td>{{ metrics.RF_MSE }}</td>
+                    </tr>
+                    <tr>
+                        <td>Linear Regression</td>
+                        <td>{{ metrics.LR_MAE }}</td>
+                        <td>{{ metrics.LR_MSE }}</td>
+                    </tr>
+                    <tr>
+                        <td>SVM</td>
+                        <td>{{ metrics.SVM_MAE }}</td>
+                        <td>{{ metrics.SVM_MSE }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

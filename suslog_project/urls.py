@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("inicial.urls")),
     path("predicao/", include("predicao.urls")),
+    path("comparar-modelos/", include("comparar_modelos.urls")),
 ]
 
 if settings.DEBUG:

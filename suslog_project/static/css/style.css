@@ -130,7 +130,7 @@ p {
 }
 
 hr {
-    margin: 30px 0px 15px 0px;
+    margin: 50px 0px 40px 0px;
     color: inherit;
     border: 0;
     border-top: var(--bs-border-width) solid;
@@ -190,8 +190,8 @@ figcaption {
     color: #2864AE;
 }
 
-.container .h1-home {
-    max-width: 500px;
+.container .h1-home, .container form  {
+    max-width: 520px;
 }
 
 .video-instrucao {
@@ -281,7 +281,7 @@ label {
 }
 
 .container {
-    margin-top: 65px;
+    margin-top: 80px;
     border-radius: 10px;
     padding: 0;
 }
@@ -301,16 +301,29 @@ label {
     background-color: #f5f5f5;
 }
 
+.video-container {
+    position: relative;
+    padding-bottom: 27%;
+    overflow: hidden;
+    margin: 0 20px 0 10px;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .col {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
     gap: 15px;
-}
-  
-.height-index-inicial-sections {
-    height: 400px;
 }
 
 .central {
@@ -336,9 +349,8 @@ label {
 }
 
 .image-header {
-    max-width: 450px;
-    margin: 0 auto;
-    border-radius: 10px;
+    max-width: 550px;
+    border-radius: 10px 0px 0px 10px;
 }
 
 .list-group-item {
@@ -469,6 +481,8 @@ h3 {
 }
 
 input[type="text"], input[type="number"], input[type="password"] {
+    margin: 20px 0px 20px 0px;
+    padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid #D6D7DB;
 }

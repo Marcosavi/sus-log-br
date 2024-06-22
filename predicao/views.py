@@ -57,7 +57,7 @@ grid_search.fit(X_train, y_train)
 
 # Get the best parameters
 best_params = grid_search.best_params_
-print("Best parameters found: ", best_params)
+print("Melhores parametros encontrados: ", best_params)
 
 # Train the model with the best parameters
 best_rf = grid_search.best_estimator_
@@ -88,11 +88,11 @@ def compare_year(request):
             # Generate the graph
             plt.figure(figsize=(10, 6))
             sns.lineplot(data=data_year, x='data', y='vacinas_aplicadas', label='Real')
-            sns.lineplot(data=data_year, x='data', y='vacinas_previstas', label='Predicted')
+            sns.lineplot(data=data_year, x='data', y='vacinas_previstas', label='Predito')
             plt.xticks(rotation=45)
-            plt.title(f'Real vs Predicted Vaccines in {year_to_compare}')
-            plt.xlabel('Date')
-            plt.ylabel('Number of Vaccines')
+            plt.title(f'Real vs Vacinas preditas em {year_to_compare}')
+            plt.xlabel('Data')
+            plt.ylabel('Número de vacinas')
             plt.legend()
 
             # Save the plot
