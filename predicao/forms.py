@@ -1,7 +1,5 @@
-from django import forms #type: ignore
-from .models import Predicao #type: ignore
+# forms.py
+from django import forms
 
-class PredicaoForm(forms.ModelForm):
-    class Meta:
-        model = Predicao
-        fields = '__all__'
+class ForquilhinhaVacinaForm(forms.Form):
+    Ano = forms.IntegerField(label='Enter the year you want to compare (2004-2022)')

@@ -1,35 +1,53 @@
-{% extends "base.html" %}
+<!-- templates/predicao/index.html -->
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
-Adicionar Autoescola | Acelere
+Compare Year
 {% endblock %}
 
 {% block content %}
-    {% if user %}
-        <div class="row">
-            <form method="POST" enctype="multipart/form-data" class="form-add-product">
-                {% csrf_token %}
-                <img class="image-banner-ai" src="{% static 'images/banner_ia.png' %}" alt="Banner IA">
+<div class="container mt-4">
+    <h1>Compare Vaccination Data for a Year</h1>
+    
+    <!-- Form for selecting the year -->
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
-                <!-- Seçao 1 - Cadastro Rápido -->
-                <div class="inline-cadastro">
-                    <h1 class="h3-home">Predicao rápida</h1>
-                    <smal>⏱️ 10 segundos</smal>
-                </div>
+    <!-- Display the table of results if data is available -->
+    {% if has_data %}
+        <h2 class="mt-4">Results for {{ form.cleaned_data.Ano }}</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>Date</th>
+                    <th>Applied vaccines</th>
+                    <th>Predicted vaccines</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data_year.itertuples %}
+                <tr>
+                    <td>{{ row.Index }}</td>
+                    <td>{{ row.data }}</td>
+                    <td>{{ row.vacinas_aplicadas }}</td>
+                    <td>{{ row.vacinas_previstas }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-                <div class="fieldWrapper">
-                    <ul><li>Ano e mês (Ex: 06/2024)</li></ul>
-                    {{ form.ano_mes }}
-                </div>
-
-                <div class="fieldWrapper">
-                    <button class="btn btn-sm btn-main big" type="submit">realizar prediçao</button>
-                </div>
-                
-            </form>
-        </div>
-    {% else %}
-        <p>Access denied</p>
+        <!-- Display the graph if it exists -->
+        {% if graph_path %}
+            <div class="mt-4">
+                <h3>Graphical Comparison</h3>
+                <img src="{% static graph_path %}" alt="Graph showing real vs predicted values" class="img-fluid">
+            </div>
+        {% endif %}
     {% endif %}
+</div>
 {% endblock %}
