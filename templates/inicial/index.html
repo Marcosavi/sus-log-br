@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<!-- Section 1: Solution -->
+<!-- Seçao 1: Seçao primária -->
 <div class="container text-center sec-home">
     <div class="row">
       <div class="col">
@@ -19,7 +19,7 @@
     </div>
 </div>
 
-<!-- Section 3: Problem -->
+<!-- Seçao 2: Problema a ser solucionado -->
 <div class="container text-center gray sec-home">
   <div class="row">
     <div class="col">
@@ -37,7 +37,7 @@
 </div>
 
 
-<!-- Section 2: Demo -->
+<!-- Section 3: Prediçao DF1 -->
 <div class="container text-center sec-home">
   <div class="row">
     <div class="col">
@@ -46,17 +46,18 @@
     <div class="col">
       <h1 class="h1-home">💉 Prediçao de Vacinas em Forquilhinha (SC)</h1>
       <p class="p-first additional-padding-bottom">Teste nosso modelo de Floresta Aleatória e compare o valor predito com o valor real das vacinas aplicadas em Forquilhinha.</p>
+      <a href="{% url 'predicao:forquilhinha' %}"><button type="button" class="btn btn-sm btn-whatsapp big">Prever vacinas aplicadas</button></a>
     </div>
   </div>
   
 
-<!-- Section 1: Solution -->
+<!-- Section 4: Prediçao DF1 - Comparar modelos -->
 <div class="container text-center sec-home">
   <div class="row">
     <div class="col">
       <h1 class="h1-home">📊 Modelos de Predição de Vacinas em Forquilhinha (SC)</h1>
       <p class="p-first additional-padding-bottom">Avaliação do Desempenho de SVM, Regressão Linear e Floresta Aleatória na Previsão de Vacinas Aplicadas e sua Precisão.</p>
-      <a href="{% url 'predicao:forquilhinha' %}"><button type="button" class="btn btn-sm btn-main big">Realizar previsões</button></a>
+      <a href="{% url 'comparar_modelos:comparar_models_df1' %}"><button type="button" class="btn btn-sm btn-whatsapp big">Comparar modelos</button></a>
     </div>
     <div class="col">
       <img class="image-header" src="{% static 'images/compare_models_2006.png' %}">
@@ -64,48 +65,16 @@
   </div>
 </div>
 
-<!-- Section 3: Problem -->
+<!-- Section 5: Demo -->
 <div class="container text-center gray sec-home">
-  <div class="row">
-    <div class="col">
-      <img class="image-header" src="{% static 'images/vacinacovid.jpg' %}">
-    </div>
-    <div class="col height-index-inicial-sections">
-      <ul class="list-group list-group-flush">
-          <h3 class="h3-home">Bilhões em prejuizos</h3>
-          <li class="list-group-item"><i class="bi bi-calendar-date"></i> Entre 2015 a 2023: R$2,08BI em insumos inutilizados</li>
-          <li class="list-group-item"><i class="bi bi-cash-coin"></i> Apenas em 2023 Governou perdeu R$1,2BI</li>
-        </ul>
-        <a href="https://g1.globo.com/jornal-nacional/noticia/2024/04/22/falta-de-comunicacao-prejudica-distribuicao-eficiente-de-medicamentos-e-vacinas-pela-rede-do-sus.ghtml"><button type="button" class="btn btn-sm btn-whatsapp big">Ler reportagem</button></a>
-    </div>
-  </div>
-</div>
-
-
-
-<!-- Section 2: Demo -->
-<div class="container text-center sec-home">
   <div class="row">
     <div class="col video-container">
       <iframe width="555" height="312" src="https://www.youtube.com/embed/zB4I68XVPzQ" title="Star Wars: The Last Jedi Official Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
     <div class="col">
-      <h1 class="h1-home">⏱️ Prediçoes em segundos</h1>
+      <h3 class="h3-home">⏱️ Prediçoes em segundos</h3>
       <p class="p-first additional-padding-bottom">Assista ao vídeo e descubra como você também pode realizar prediçoes gratuitamente.</p>
     </div>
   </div>
-
-<!-- Section 4: Logica do Projeto 
-<div class="container text-center first-sec-inicial-index">
-  <div class="row">
-    <div class="col">
-      <img src="{% static 'images/logic.svg' %}">
-    </div>
-  </div>
-</div> -->
-
-<!-- Section 5: FAQ -->
-
-<!-- Section 6: Whatsapp Section -->
-
+</div>
 {% endblock %}

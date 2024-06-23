@@ -303,9 +303,9 @@ label {
 
 .video-container {
     position: relative;
-    padding-bottom: 27%;
+    padding-bottom: 25%;
     overflow: hidden;
-    margin: 0 20px 0 10px;
+    margin: 30px 20px 30px 40px;
     border-radius: 10px;
 }
 
