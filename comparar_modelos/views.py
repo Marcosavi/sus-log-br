@@ -71,7 +71,7 @@ grid_search_svr.fit(X_train, y_train)
 
 # Get the best parameters
 best_params_svr = grid_search_svr.best_params_
-print("Best parameters for SVR found: ", best_params_svr)
+print("Melhores parâmetros para SVR: ", best_params_svr)
 
 # Train the SVR with the best parameters
 best_svr = grid_search_svr.best_estimator_
@@ -116,17 +116,17 @@ def compare_models_df1(request):
             # Generate the graph
             plt.figure(figsize=(10, 6))
             sns.lineplot(data=data_year, x='data', y='vacinas_aplicadas', label='Real')
-            sns.lineplot(data=data_year, x='data', y='Vacinas_RF', label='Random Forest')
-            sns.lineplot(data=data_year, x='data', y='Vacinas_LR', label='Linear Regression')
-            sns.lineplot(data=data_year, x='data', y='Vacinas_SVM', label='SVM')
+            sns.lineplot(data=data_year, x='data', y='Vacinas_RF', label='Predito | Floresta aleatória')
+            sns.lineplot(data=data_year, x='data', y='Vacinas_LR', label='Predito | Regressao linear')
+            sns.lineplot(data=data_year, x='data', y='Vacinas_SVM', label='Predito | SVM')
             plt.xticks(rotation=45)
-            plt.title(f'Comparison of Models for {year_to_compare}')
-            plt.xlabel('Date')
-            plt.ylabel('Number of Vaccines')
+            plt.title(f'Comparaçao para {year_to_compare}')
+            plt.xlabel('Data')
+            plt.ylabel('Número de vacinas aplicadas')
             plt.legend()
 
             # Save the plot
-            graph_filename = f'compare_models_{year_to_compare}.png'
+            graph_filename = f'comparar_modelos_{year_to_compare}.png'
             graph_path = os.path.join(media_dir, graph_filename)
             plt.savefig(graph_path)
             plt.close()

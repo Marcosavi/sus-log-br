@@ -3,31 +3,40 @@
 {% load static %}
 
 {% block title %}
-Compare Models
+Comparar modelos | sus.log.br
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Compare Predictions from Different Models</h1>
-    
-    <!-- Form for selecting the year -->
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+          <h1 class="h1-home">Predição anual de vacinas em Forquilhinha/SC feita por diferente modelos</h1>
+          <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-sm btn-main big">Realizar predicao</button>
+            </form>
+          </div>
+        </div>
+        <div class="col">
+            <img class="image-header" src="{% static 'images/vacinas.jpg' %}">
+          </div>
+      </div>
 
     <!-- Display the table of results if data is available -->
     {% if has_data %}
-        <h2 class="mt-4">Results for {{ form.cleaned_data.Ano }}</h2>
+    <hr> 
+        <h3 class="mt-4">Resultados para {{ form.cleaned_data.Ano }}</h3>
         <table class="table table-striped mt-4">
             <thead>
                 <tr>
-                    <th>Index</th>
-                    <th>Date</th>
-                    <th>Applied vaccines</th>
-                    <th>Random Forest</th>
-                    <th>Linear Regression</th>
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Vacinas aplicadas</th>
+                    <th>Floresta aleatória</th>
+                    <th>Regressao Linear</th>
                     <th>SVM</th>
                 </tr>
             </thead>
@@ -36,10 +45,10 @@ Compare Models
                 <tr>
                     <td>{{ row.Index }}</td>
                     <td>{{ row.data }}</td>
-                    <td>{{ row.vacinas_aplicadas }}</td>
-                    <td>{{ row.Vacinas_RF }}</td>
-                    <td>{{ row.Vacinas_LR }}</td>
-                    <td>{{ row.Vacinas_SVM }}</td>
+                    <td>{{ row.vacinas_aplicadas|floatformat:0 }}</td>
+                    <td>{{ row.Vacinas_RF|floatformat:0 }}</td>
+                    <td>{{ row.Vacinas_LR|floatformat:0 }}</td>
+                    <td>{{ row.Vacinas_SVM|floatformat:0 }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -48,18 +57,20 @@ Compare Models
         <!-- Display the graph if it exists -->
         {% if graph_path %}
             <div class="mt-4">
-                <h3>Graphical Comparison</h3>
+                <hr>
+                <h3>Comparação entre modelos</h3>
                 <img src="{% static graph_path %}" alt="Graph comparing model predictions" class="img-fluid">
             </div>
         {% endif %}
 
         <!-- Display the metrics -->
         <div class="mt-4">
-            <h3>Model Metrics</h3>
+            <hr>
+            <h3>Métricas de avaliaçao</h3>
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Model</th>
+                        <th>Modelo</th>
                         <th>MAE</th>
                         <th>MSE</th>
                     </tr>
@@ -67,18 +78,18 @@ Compare Models
                 <tbody>
                     <tr>
                         <td>Random Forest</td>
-                        <td>{{ metrics.RF_MAE }}</td>
-                        <td>{{ metrics.RF_MSE }}</td>
+                        <td>{{ metrics.RF_MAE|floatformat:0 }}</td>
+                        <td>{{ metrics.RF_MSE|floatformat:0 }}</td>
                     </tr>
                     <tr>
                         <td>Linear Regression</td>
-                        <td>{{ metrics.LR_MAE }}</td>
-                        <td>{{ metrics.LR_MSE }}</td>
+                        <td>{{ metrics.LR_MAE|floatformat:0 }}</td>
+                        <td>{{ metrics.LR_MSE|floatformat:0 }}</td>
                     </tr>
                     <tr>
                         <td>SVM</td>
-                        <td>{{ metrics.SVM_MAE }}</td>
-                        <td>{{ metrics.SVM_MSE }}</td>
+                        <td>{{ metrics.SVM_MAE|floatformat:0 }}</td>
+                        <td>{{ metrics.SVM_MSE|floatformat:0 }}</td>
                     </tr>
                 </tbody>
             </table>

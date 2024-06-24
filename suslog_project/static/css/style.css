@@ -480,8 +480,8 @@ h3 {
     }
 }
 
-input[type="text"], input[type="number"], input[type="password"] {
-    margin: 20px 0px 20px 0px;
+input[type="text"], input[type="number"], input[type="password"], .fieldWrapper input, input[type="file" i], select {
+    margin: 15px 0px 30px 0px;
     padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid #D6D7DB;
@@ -524,14 +524,6 @@ p {
     }
 }
 
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    border-collapse: collapse;
-    padding: 0;
-} 
 
 ol, ul {
     padding-left: 1.5rem;
@@ -564,8 +556,4 @@ ol, ul {
     margin-bottom: 10px;
     gap: 10px;
     display: flex;
-}
-
-.fieldWrapper input, input[type="file" i], select {
-    height: 30px;
 }

@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-Prediçao Forquilhinha
+Predição Forquilhinha | sus.log.br
 {% endblock %}
 
 {% block content %}
@@ -12,7 +12,7 @@ Prediçao Forquilhinha
 
     <div class="row">
         <div class="col">
-          <h1 class="h1-home">Compare vacinaçao anual em Forquilhinha/SC</h1>
+          <h1 class="h1-home">Compare vacinação anual em Forquilhinha/SC</h1>
           <div>
             <form method="post">
                 {% csrf_token %}
@@ -22,11 +22,10 @@ Prediçao Forquilhinha
           </div>
         </div>
         <div class="col">
-            <img class="image-header" src="{% static 'images/medicamentos.webp' %}">
+            <img class="image-header" src="{% static 'images/vacinas.jpg' %}">
           </div>
       </div>
 
-    <!-- Display the table of results if data is available -->
     {% if has_data %}
         <hr> 
         <h3 class="mt-4">Resultados para {{ form.cleaned_data.Ano }}</h3>
@@ -44,14 +43,14 @@ Prediçao Forquilhinha
                 <tr>
                     <td>{{ row.Index }}</td>
                     <td>{{ row.data }}</td>
-                    <td>{{ row.vacinas_aplicadas }}</td>
-                    <td>{{ row.vacinas_previstas }}</td>
+                    <td>{{ row.vacinas_aplicadas|floatformat:0 }}</td>
+                    <td>{{ row.vacinas_previstas|floatformat:0 }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
 
-        <!-- Display the graph if it exists -->
+        <!-- Mostrar gráfico gerado pelo seaborn -->
         {% if graph_path %}
             <div class="mt-4">
                 <hr>
