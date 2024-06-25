@@ -3,29 +3,32 @@
 {% load static %}
 
 {% block title %}
-Future Predictions
+Prever o futuro | sus.log.br
 {% endblock %}
 
 {% block content %}
-<div class="container mt-4">
-    <h1>Future Predictions of Vaccine Numbers</h1>
+<div class="container">
     
-    <!-- Form for selecting the future year -->
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-    <!-- Display the graph if it exists -->
-    {% if has_data %}
-        <div class="mt-4">
-            <h3>Graphical Comparison</h3>
-            <img src="{% static graph_path %}" alt="Graph showing future predictions" class="img-fluid">
+    <div class="row">
+        <div class="col">
+          <h1 class="h1-home">Predição de vacinas aplicadas em Forquilhinha/SC</h1>
+          <div>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-sm btn-main big">Realizar predicao</button>
+            </form>
+          </div>
         </div>
-
-        <!-- Display the table of future predictions -->
-        <h2 class="mt-4">Future Predictions</h2>
+        <div class="col">
+            <img class="image-header" src="{% static 'images/vacinas.jpg' %}">
+          </div>
+      </div>
+      
+    {% if has_data %}
+    
+        <hr> 
+        <h3 class="mt-4">Resultados da prediçao</h3>
         <table class="table table-striped mt-4">
             <thead>
                 <tr>
@@ -46,6 +49,12 @@ Future Predictions
                 {% endfor %}
             </tbody>
         </table>
+
+        <hr>
+        <div class="mt-4">
+            <h3>Gráfico</h3>
+            <img src="{% static graph_path %}" alt="Gráfico demonstrando o valor predito">
+        </div>
     {% endif %}
 </div>
 {% endblock %}
