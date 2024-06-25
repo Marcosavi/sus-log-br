@@ -34,17 +34,13 @@ Prever o futuro | sus.log.br
                 <tr>
                     <th>Date</th>
                     <th>Random Forest</th>
-                    <th>Linear Regression</th>
-                    <th>SVM</th>
                 </tr>
             </thead>
             <tbody>
                 {% for row in future_df.itertuples %}
                 <tr>
-                    <td>{{ row.Data }}</td>
-                    <td>{{ row.Vacinas_RF }}</td>
-                    <td>{{ row.Vacinas_LR }}</td>
-                    <td>{{ row.Vacinas_SVR }}</td>
+                    <td>{{ row.Data|date:"F Y" }}</td>
+                    <td>{{ row.Vacinas_RF|floatformat:0 }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

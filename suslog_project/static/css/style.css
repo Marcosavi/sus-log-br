@@ -153,11 +153,15 @@ figcaption {
 }
 
 .navbar-toggler {
-    padding: .25rem .75rem;
+    padding: .10rem .75rem;
     font-size: 1.25rem;
     line-height: 1;
-    background-color: #E11138;
+    background-color: #2864AE;
     border-radius: .35rem;
+    color: white;
+}
+
+.navbar-toggler-icon {
     color: white;
 }
 
@@ -267,14 +271,6 @@ label {
     color: black;
 }
 
-.navbar-toggler {
-    padding: .10rem .75rem;
-    font-size: 1.1rem;
-    line-height: 1;
-    background-color: #E11138;
-    border-radius: 10px;
-    color: white;
-}
 
 .first-section-inicial {
     padding: 50px 0px !important;
@@ -353,6 +349,11 @@ label {
     border-radius: 10px 0px 0px 10px;
 }
 
+.prejuizos-image {
+    max-width: 550px;
+    border-radius: 10px 0px 0px 10px;
+}
+
 .list-group-item {
     padding-left: 0;
 }
@@ -427,12 +428,14 @@ h3 {
         font-size: 16px;
     } .bio {
         padding-top: 25px !important;
-    } .btn-main {
+    }
+    .btn-main {
         max-width:  100%;
     } .login-h3 {
         padding-bottom: 0px !important;
       } .container {
         padding: 0 20px;
+        margin-top: 25px;
       } .container input {
         max-width: 200px;
       } .margin-moderador {

@@ -11,7 +11,7 @@
       <div class="col">
         <h1 class="h1-home">Predição de inventário usando Machine Learning</h1>
         <p class="p-first additional-padding-bottom">Preveja e otimize o uso de medicamentos e vacinas usando Inteligência Artificial.</p>
-        <a href="{% url 'predicao:passado' %}"><button type="button" class="btn btn-sm btn-main big">Realizar previsões</button></a>
+        <a href="{% url 'predicao:futuro' %}"><button type="button" class="btn btn-sm btn-main big">Realizar previsões</button></a>
       </div>
       <div class="col">
         <img class="image-header" src="{% static 'images/medicamentos.webp' %}">
@@ -23,7 +23,7 @@
 <div class="container text-center gray sec-home">
   <div class="row">
     <div class="col">
-      <img class="image-header" src="{% static 'images/vacinacovid.jpg' %}">
+      <img class="prejuizos-image" src="{% static 'images/vacinacovid.jpg' %}">
     </div>
     <div class="col height-index-inicial-sections">
       <ul class="list-group list-group-flush">
@@ -36,12 +36,11 @@
   </div>
 </div>
 
-
 <!-- Section 3: Prediçao DF1 -->
 <div class="container text-center sec-home">
   <div class="row">
     <div class="col">
-      <img class="image-header home-graficos" src="{% static 'images/graph_2007.png' %}">
+      <img class="image-header" src="{% static 'images/graph_2007.png' %}">
     </div>
     <div class="col">
       <h1 class="h1-home">💉 Compare o valor predito e real de imunizantes aplicados</h1>
@@ -60,7 +59,7 @@
       <a href="{% url 'comparar_modelos:comparar_models_df1' %}"><button type="button" class="btn btn-sm btn-whatsapp big">Comparar modelos</button></a>
     </div>
     <div class="col">
-      <img class="image-header home-graficos" src="{% static 'images/comparar_modelos_2004.png' %}">
+      <img class="image-header" src="{% static 'images/comparar_modelos_2004.png' %}">
     </div>
   </div>
 </div>
@@ -69,25 +68,12 @@
 <div class="container text-center sec-home">
   <div class="row">
     <div class="col">
-      <img class="image-header home-graficos" src="{% static 'images/predicao_futura_2060.png' %}">
+      <img class="image-header" src="{% static 'images/predicao_futura_2060.png' %}">
     </div>
     <div class="col">
       <h1 class="h1-home">🔮 Prediçao de vacinas aplicadas em Forquilhinha</h1>
-      <p class="p-first additional-padding-bottom">Use nosso modelo para prever quantos imunizantes serao aplicados em determinado ano no futuro em Forquilhinha.</p>
-      <a href="{% url 'predicao:passado' %}"><button type="button" class="btn btn-sm btn-whatsapp big">Prever vacinas aplicadas</button></a>
+      <p class="p-first additional-padding-bottom">Use nosso modelo para prever quantos imunizantes serao aplicados futuramente em Forquilhinha.</p>
+      <a href="{% url 'predicao:futuro' %}"><button type="button" class="btn btn-sm btn-whatsapp big">Saiba mais</button></a>
     </div>
   </div>
-
-<!-- Section 6: Demo -->
-<div class="container text-center gray sec-home">
-  <div class="row">
-    <div class="col video-container">
-      <iframe width="555" height="312" src="https://www.youtube.com/embed/zB4I68XVPzQ" title="Star Wars: The Last Jedi Official Teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="col">
-      <h3 class="h3-home">⏱️ Prediçoes em segundos</h3>
-      <p class="p-first additional-padding-bottom">Assista ao vídeo e descubra como você também pode realizar prediçoes gratuitamente.</p>
-    </div>
-  </div>
-</div>
 {% endblock %}

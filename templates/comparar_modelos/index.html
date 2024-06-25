@@ -44,7 +44,7 @@ Comparar modelos | sus.log.br
                 {% for row in data_year.itertuples %}
                 <tr>
                     <td>{{ row.Index }}</td>
-                    <td>{{ row.data }}</td>
+                    <td>{{ row.data|date:"F Y" }}</td>
                     <td>{{ row.vacinas_aplicadas|floatformat:0 }}</td>
                     <td>{{ row.Vacinas_RF|floatformat:0 }}</td>
                     <td>{{ row.Vacinas_LR|floatformat:0 }}</td>
