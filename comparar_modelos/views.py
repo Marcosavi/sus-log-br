@@ -13,11 +13,9 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
-matplotlib.use('Agg') #Usado para salvar nosso gráfico em PNG (Agg é usado geralmente em GUI, onde nao há visualizaçao gráfica)
+matplotlib.use('Agg')
 
-csv_df1 = os.path.join(settings.BASE_DIR, 'suslog_project/static/datasets/suslogbr_df1.csv')
-
-df = pd.read_csv(csv_df1)
+df = pd.read_csv("suslog_project/static/datasets/suslogbr_df1.csv")
 df['Data'] = pd.to_datetime(df['Data'])
 df['Vacinas aplicadas'] = df['Vacinas aplicadas'].str.replace(',', '').astype(float)
 df['Mes'] = df['Data'].dt.month
@@ -27,23 +25,18 @@ df['Trimestre'] = df['Data'].dt.quarter
 X = df[['Mes', 'Ano', 'Trimestre']]
 y = df['Vacinas aplicadas']
 
-# Normalizando nossas features
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Treinar: Random Forest
 rf = RandomForestRegressor(n_estimators=500, max_depth=10, min_samples_split=4, min_samples_leaf=4, random_state=42)
 rf.fit(X_train, y_train)
 
-# Treinar: Linear Regression
 lr = LinearRegression()
 lr.fit(X_train, y_train)
 
 from sklearn.model_selection import GridSearchCV
-
-# Treinar: Support Vector Machine (Nesse caso, usado para Regressao, SVR) usando o GridSearchCV
 
 param_grid_svr = {
     'kernel': ['linear', 'poly', 'rbf'],

@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-mn$z+0@22-jxqvf-a6x=-3)#n59dk-=ri@3w=_o_ao*_tze+1a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suslog.pythonanywhere.com', 'www.suslog.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['suslog.pythonanywhere.com', 'www.suslog.pythonanywhere.com', 'www.sus.log.br', '127.0.0.1']
 
 # Application definition
 

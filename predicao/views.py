@@ -22,9 +22,8 @@ logger.addHandler(handler)"""
 
 matplotlib.use('Agg')
 
-csv_df1 = os.path.join(settings.BASE_DIR, 'suslog_project/static/datasets/suslogbr_df1.csv')
 
-df = pd.read_csv(csv_df1)
+df = pd.read_csv('suslog_project/static/datasets/suslogbr_df1.csv')
 df['Data'] = pd.to_datetime(df['Data'])
 df['Vacinas aplicadas'] = df['Vacinas aplicadas'].str.replace(',', '').astype(float)
 df['Mes'] = df['Data'].dt.month
