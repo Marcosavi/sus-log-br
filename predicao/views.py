@@ -9,9 +9,8 @@ from .forms import ForquilhinhaPassadoForm, ForquilhinhaFuturoForm
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_squared_error
 
-matplotlib.use('Agg') #Usado para salvar nosso gráfico em PNG (Agg é usado geralmente em GUI, onde nao há visualizaçao gráfica)
+matplotlib.use('Agg')
 
 csv_df1 = os.path.join(settings.BASE_DIR, 'suslog_project/static/datasets/suslogbr_df1.csv')
 
@@ -35,14 +34,6 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 rf = RandomForestRegressor(random_state=42)
 
 # Usando GridSearchCV para testar os melhores parâmetros automaticamente
-"""param_grid = {
-    'n_estimators': [1000],
-    'max_depth': [50],
-    'max_features': ['sqrt'],
-    'min_samples_split': [2],
-    'min_samples_leaf': [1]
-}"""
-
 param_grid = {
     'n_estimators': [100, 500, 1000],
     'max_depth': [10, 30, 50],
