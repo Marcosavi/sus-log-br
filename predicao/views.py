@@ -7,7 +7,7 @@ from django.conf import settings
 from django.shortcuts import render
 from .forms import ForquilhinhaPassadoForm, ForquilhinhaFuturoForm
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 matplotlib.use('Agg')
