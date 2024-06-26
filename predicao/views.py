@@ -9,6 +9,15 @@ from .forms import ForquilhinhaPassadoForm, ForquilhinhaFuturoForm
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler(os.path.join(settings.BASE_DIR, 'suslog_project/logs/debug.log'))
+handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
 
 matplotlib.use('Agg')
 
@@ -44,10 +53,13 @@ param_grid = {
 
 grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=5, n_jobs=1, verbose=2, scoring='neg_mean_squared_error')
 
-grid_search.fit(X_train, y_train)
-
-best_params = grid_search.best_params_
-print("Melhores parametros encontrados: ", best_params)
+try:
+    grid_search.fit(X_train, y_train)
+    best_params = grid_search.best_params_
+    logger.info(f"Melhores parametros encontrados: {best_params}")
+except Exception as e:
+    logger.error(f"Error during grid search fit: {e}", exc_info=True)
+    raise
 
 # Treinando RF com os melhores parametros
 best_rf = grid_search.best_estimator_
