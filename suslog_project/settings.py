@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-mn$z+0@22-jxqvf-a6x=-3)#n59dk-=ri@3w=_o_ao*_tze+1a"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['suslog.pythonanywhere.com', 'www.suslog.pythonanywhere.com', '127.0.0.1']
 
