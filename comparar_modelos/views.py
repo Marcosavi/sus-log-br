@@ -53,7 +53,7 @@ param_grid_svr = {
 
 svr = SVR()
 
-grid_search_svr = GridSearchCV(estimator=svr, param_grid=param_grid_svr, cv=5, n_jobs=1, verbose=2, scoring='neg_mean_squared_error')
+grid_search_svr = GridSearchCV(estimator=svr, param_grid=param_grid_svr, cv=5, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
 
 grid_search_svr.fit(X_train, y_train)
 
