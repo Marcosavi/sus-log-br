@@ -30,8 +30,11 @@ X_scaled = scaler.fit_transform(X)
 
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
+# Treinar: Random Forest (melhor modelo testado para regressao)
+rf = RandomForestRegressor(random_state=42)
+
 # Usando GridSearchCV para testar os melhores parâmetros automaticamente
-param_grid = {
+"""param_grid = {
     'n_estimators': [100, 500, 1000],
     'max_depth': [10, 30, 50],
     'max_features': ['sqrt', 10],
@@ -39,14 +42,13 @@ param_grid = {
     'min_samples_leaf': [1, 2, 4]
 }
 
-rf = RandomForestRegressor()
-
 grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=5, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
 
-grid_search.fit(X_train, y_train)
-
+# Treinando RF com os melhores parametros
 best_rf = grid_search.best_estimator_
-best_rf.fit(X_train, y_train)
+best_rf.fit(X_train, y_train)"""
+
+rf.fit(X_train, y_train)
 
 def compare_year(request):
     form = ForquilhinhaPassadoForm(request.POST or None)
@@ -58,7 +60,7 @@ def compare_year(request):
         data_year = df[df['Ano'] == year_to_compare].copy()
         if not data_year.empty:
             data_year_scaled = scaler.transform(data_year[['Mes', 'Ano', 'Trimestre']])
-            predictions_year = best_rf.predict(data_year_scaled)
+            predictions_year = rf.predict(data_year_scaled)
             data_year['Vacinas previstas'] = predictions_year
             data_year.reset_index(drop=True, inplace=True)
             data_year.index += 1
@@ -102,7 +104,7 @@ def future_predictions(request):
         year = form.cleaned_data['year']
         future_df = generate_future_dates(f'{year}-01-01', f'{year}-12-01')
         future_features = scaler.transform(future_df[['Mes', 'Ano', 'Trimestre']])
-        future_predictions_rf = best_rf.predict(future_features)
+        future_predictions_rf = rf.predict(future_features)
         future_df['Vacinas_RF'] = future_predictions_rf
         has_data = True
 
