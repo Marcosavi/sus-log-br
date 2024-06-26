@@ -42,8 +42,7 @@ param_grid = {
     'min_samples_leaf': [1, 2, 4]
 }
 
-grid_search = GridSearchCV(estimator=rf, param_grid=param_grid,
-                           cv=5, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
+grid_search = GridSearchCV(estimator=rf, param_grid=param_grid, cv=5, n_jobs=-1, verbose=2, scoring='neg_mean_squared_error')
 
 grid_search.fit(X_train, y_train)
 
