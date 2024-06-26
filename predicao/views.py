@@ -9,7 +9,8 @@ from .forms import ForquilhinhaPassadoForm, ForquilhinhaFuturoForm
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
-import logging
+
+"""import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -17,7 +18,7 @@ handler = logging.FileHandler(os.path.join(settings.BASE_DIR, 'suslog_project/lo
 handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
-logger.addHandler(handler)
+logger.addHandler(handler)"""
 
 matplotlib.use('Agg')
 
@@ -43,7 +44,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, 
 rf = RandomForestRegressor(random_state=42)
 
 # Usando GridSearchCV para testar os melhores parâmetros automaticamente
-param_grid = {
+"""param_grid = {
     'n_estimators': [100, 500, 1000],
     'max_depth': [10, 30, 50],
     'max_features': ['sqrt', 10],
@@ -63,7 +64,9 @@ except Exception as e:
 
 # Treinando RF com os melhores parametros
 best_rf = grid_search.best_estimator_
-best_rf.fit(X_train, y_train)
+best_rf.fit(X_train, y_train)"""
+
+rf.fit(X_train, y_train)
 
 def compare_year(request):
     form = ForquilhinhaPassadoForm(request.POST or None)
@@ -75,7 +78,7 @@ def compare_year(request):
         data_year = df[df['Ano'] == year_to_compare].copy()
         if not data_year.empty:
             data_year_scaled = scaler.transform(data_year[['Mes', 'Ano', 'Trimestre']])
-            predictions_year = best_rf.predict(data_year_scaled)
+            predictions_year = rf.predict(data_year_scaled)
             data_year['Vacinas previstas'] = predictions_year
             data_year.reset_index(drop=True, inplace=True)
             data_year.index += 1
@@ -119,7 +122,7 @@ def future_predictions(request):
         year = form.cleaned_data['year']
         future_df = generate_future_dates(f'{year}-01-01', f'{year}-12-01')
         future_features = scaler.transform(future_df[['Mes', 'Ano', 'Trimestre']])
-        future_predictions_rf = best_rf.predict(future_features)
+        future_predictions_rf = rf.predict(future_features)
         future_df['Vacinas_RF'] = future_predictions_rf
         has_data = True
 
