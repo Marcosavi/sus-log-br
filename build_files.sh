@@ -1,18 +1,20 @@
+#!/bin/bash
+
 echo "BUILD START"
 
-# create a virtual environment named 'venv' if it doesn't already exist
-python3.9 -m venv venv
+# Use the default Python available on Vercel, typically Python 3
+python -m venv venv
 
-# activate the virtual environment
+# Activate the virtual environment
 source venv/bin/activate
 
-# install all deps in the venv
+# Install dependencies
 pip install -r requirements.txt
 
-# collect static files using the Python interpreter from venv
-python3.9 manage.py collectstatic --noinput
+# Collect static files
+python manage.py collectstatic --noinput
 
 echo "BUILD END"
 
-# [optional] Start the application here 
+# [optional] Start the application here
 # python manage.py runserver
