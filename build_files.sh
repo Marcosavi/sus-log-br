@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Install SQLite development libraries
-apk add --no-cache sqlite-libs sqlite-dev
+# Add the directory to PATH
+export PATH=$PATH:/python312/bin
 
-# Install any other dependencies you need
+# Install dependencies
 pip install -r requirements.txt
 
 # Collect static files
