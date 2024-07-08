@@ -1,11 +1,13 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-echo "Building project packages..."
-python3 -m pip install -r requirements.txt
+# Install SQLite development libraries
+apk add --no-cache sqlite-libs sqlite-dev
 
-echo "Migrating Database..."
-python3 manage.py makemigrations --noinput
-python3 manage.py migrate --noinput
+# Install any other dependencies you need
+pip install -r requirements.txt
 
-echo "Collecting static files..."
-python3 manage.py collectstatic --noinput
+# Collect static files
+python manage.py collectstatic --noinput
+
+# Apply database migrations
+python manage.py migrate
