@@ -1,4 +1,12 @@
-# build_files.sh
+#!/bin/bash
+# Activate the virtual environment
+source venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-python -m venv venv
-python3.9 manage.py collectstatic
+
+# Collect static files
+python manage.py collectstatic --noinput
+
+# Apply database migrations
+python manage.py migrate
