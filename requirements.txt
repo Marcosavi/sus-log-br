@@ -12,3 +12,4 @@ scikit-learn==1.5.0
 seaborn==0.13.2
 matplotlib==3.9.0
 python-dotenv==1.0.1
+pip==24.1.2
