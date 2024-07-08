@@ -1,11 +1,18 @@
-#!/usr/bin/env bash
+echo "BUILD START"
 
-echo "Building project packages..."
-python3 -m pip install -r requirements.txt
+# create a virtual environment named 'venv' if it doesn't already exist
+python3.9 -m venv venv
 
-echo "Migrating Database..."
-python3 manage.py makemigrations --noinput
-python3 manage.py migrate --noinput
+# activate the virtual environment
+source venv/bin/activate
 
-echo "Collecting static files..."
-python3 manage.py collectstatic --noinput
+# install all deps in the venv
+pip install -r requirements.txt
+
+# collect static files using the Python interpreter from venv
+python manage.py collectstatic --noinput
+
+echo "BUILD END"
+
+# [optional] Start the application here 
+# python manage.py runserver
