@@ -1,6 +1,7 @@
 #!/bin/bash
-# Activate the virtual environment
-source venv/bin/activate
+
+# Ensure the correct paths are set
+export PATH=$PATH:/vercel/path0/.python/bin
 
 # Install dependencies
 pip install -r requirements.txt
