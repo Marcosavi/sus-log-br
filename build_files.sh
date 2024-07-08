@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Ensure the correct paths are set
-export PATH=$PATH:/vercel/path0/.python/bin
+export PATH=$PATH:/vercel/path0/.python/bin:/vercel/path0/bin
 
 # Install dependencies
-pip install -r requirements.txt
+python3 -m pip install --upgrade pip
+pip3 install -r requirements.txt
 
 # Collect static files
-python manage.py collectstatic --noinput
+python3 manage.py collectstatic --noinput
 
 # Apply database migrations
-python manage.py migrate
+python3 manage.py migrate
