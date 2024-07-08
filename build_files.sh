@@ -1,17 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Ensure /python312/bin is in the PATH
-export PATH=$PATH:/python312/bin
+echo "Building project packages..."
+python3 -m pip install -r requirements.txt
 
-# Install SQLite development libraries
-apk add --no-cache sqlite-libs sqlite-dev
+echo "Migrating Database..."
+python3 manage.py makemigrations --noinput
+python3 manage.py migrate --noinput
 
-# Ensure pip is available and install dependencies
-python3.12 -m ensurepip
-pip3.12 install -r requirements.txt
-
-# Collect static files
-python3.12 manage.py collectstatic --noinput
-
-# Apply database migrations
-python3.12 manage.py migrate
+echo "Collecting static files..."
+python3 manage.py collectstatic --noinput
