@@ -11,21 +11,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-from django.conf import settings #type: ignore
-from dotenv import load_dotenv
+from django.conf import settings 
 import os
-import dj_database_url
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT', '5432'),
-    }
-}
+DATABASES = {}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,7 +29,7 @@ SECRET_KEY = "django-insecure-mn$z+0@22-jxqvf-a6x=-3)#n59dk-=ri@3w=_o_ao*_tze+1a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['suslog.pythonanywhere.com', 'www.suslog.pythonanywhere.com', 'www.sus.log.br', '127.0.0.1']
+ALLOWED_HOSTS = ['www.sus.log.br', '127.0.0.1', '.vercel']
 
 # Application definition
 
@@ -84,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "suslog_project.wsgi.application"
+WSGI_APPLICATION = "suslog_project.wsgi.app"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
