@@ -1,1 +1,2 @@
-suslog_venv/
+venv/
+.env

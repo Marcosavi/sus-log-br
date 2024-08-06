@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "suslog_project/wsgi.py"
+    }
+  ]
+}
